@@ -1,0 +1,45 @@
+App Objects
+1. Users
+    - user name
+2. Albums
+    artist name
+    title
+3. Artists
+    - name
+
+
+Methods On Objects
+1. System Methods
+    - Start Round = 1
+        # if round < 5:
+            . random selection of artist
+            . Retrieve three random albums from iTumes
+
+            - start try = 1
+                . Show first album out of three albums to user
+                    # if correct guess: 
+                        => if try = 1: 
+                             . user_score =+ 5
+                        => if try = 2
+                            . user_score += 3
+                        => if try = 3
+                            . user_score += 1
+                        . set round = round + 1
+                        . nextRound()
+                    # if wrong guess 
+                        =>try < 3: 
+                            . repeat try(next cover art)
+                            . try +1
+                        => try = 3:
+                            . end try
+                            . reset try
+                            . set round  = round + 1
+                            . nextRound()
+        $ if round = 5:
+            . end game
+            . request username
+
+                
+            -> 1st try = 5pts
+            -> 2nd try = 3pts
+            -> 3rd try = 1pt
