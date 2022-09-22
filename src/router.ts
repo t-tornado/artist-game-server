@@ -1,5 +1,6 @@
 import { Router } from "express";
 import { ArtsitController } from "./controllers";
+import { UserController } from "./controllers/user.controller";
 import { ServerRoute } from "./util/types";
 
 /**
@@ -16,7 +17,8 @@ const ArtistRoutes: ServerRoute = {
  * USER ROUTER
  */
 const UserRouter = Router();
-// UserRouter.get("/")
-const UserRoutes: ServerRoute = { path: "/api/users", handler: UserRouter };
+UserRouter.post("/", UserController.createUser);
+UserRouter.get("/all", UserController.getUsers);
+const UserRoutes: ServerRoute = { path: "/api/user", handler: UserRouter };
 
 export const ArtistGameRoutes = [ArtistRoutes, UserRoutes];
