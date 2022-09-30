@@ -1,12 +1,12 @@
-import axios from "axios";
-class AlbumsApiClass {
-  async getArtistAlbums(config: { artiste: string; limit?: number }) {
+import { HttpClient } from "../core/http-client";
+
+class ITunesApiClass {
+  async getArtistAlbums(param: { artiste: string; limit?: number }) {
     return new Promise((resolve, reject) => {
       const url = `https://itunes.apple.com/search?country=GH&entity=album&attributes=albumTerm&term=${
-        config.artiste
-      }&limit=${config.limit ?? 3}`;
-      axios
-        .get(url, { method: "get" })
+        param.artiste
+      }&limit=${param?.limit ?? 3}`;
+      HttpClient.get(url)
         .then((res) => {
           const data = res.data.results;
           resolve(data);
@@ -16,4 +16,4 @@ class AlbumsApiClass {
   }
 }
 
-export const AlbumsAPI = new AlbumsApiClass();
+export const ITunesApi = new ITunesApiClass();

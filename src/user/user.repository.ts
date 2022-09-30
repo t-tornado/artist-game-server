@@ -1,8 +1,8 @@
-import { UserModel } from "../../db";
-import { IUser } from "../../util/types";
-import { Collection } from "./collections.service";
+import { BaseRepository } from "../core";
+import { UserModel } from "../db";
+import { IUser } from "../utils";
 
-class UserCollectionClass implements Collection<IUser> {
+class UserRepositoryClass implements BaseRepository<IUser> {
   model: typeof UserModel;
 
   constructor() {
@@ -33,4 +33,4 @@ class UserCollectionClass implements Collection<IUser> {
   }
 }
 
-export const UserCollection = new UserCollectionClass();
+export const UserRepository = new UserRepositoryClass();

@@ -1,6 +1,6 @@
 import { Router } from "express";
 
-export interface ServerRoute {
+export interface AppRoute {
   path: string;
   handler: Router;
 }

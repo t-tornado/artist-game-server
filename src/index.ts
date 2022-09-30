@@ -1,8 +1,9 @@
+import { ArtistRoutes } from "./artiste";
+import { UserRoutes } from "./user";
+import { Server } from "./app";
 import { Database } from "./db";
-import { ArtistGameRoutes } from "./router";
-import { Server } from "./services";
 
-const ArtistGameServer = new Server(ArtistGameRoutes);
+const ArtistGameServer = new Server([...UserRoutes, ...ArtistRoutes]);
 ArtistGameServer.start();
 if (Database) {
   (async () => {

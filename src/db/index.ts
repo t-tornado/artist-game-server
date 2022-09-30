@@ -5,6 +5,7 @@ dotenv.config();
 
 class DBClass {
   private url: string;
+
   constructor(url: string) {
     this.url = url;
   }

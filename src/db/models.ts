@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { IUser } from "../util/types";
+import { IUser } from "../utils/types";
 
 const UserSchema = new mongoose.Schema<IUser>({
   score: { type: Number, required: true },
